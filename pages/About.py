@@ -18,8 +18,8 @@ render_nav()
 st.markdown("""
 <div class="page-header">
   <div class="page-header-tag">🌿 Our Story</div>
-  <h1 class="page-header-title">Made with <em>intention,</em><br>not shortcuts.</h1>
-  <p class="page-header-sub">A small studio, a big love for good skin, and the bees that make it all possible.</p>
+  <h1 class="page-header-title">Pure soap, made with <em>purpose.</em></h1>
+  <p class="page-header-sub">A passion for sustainability. A commitment to clean. A love for every skin type.</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -30,42 +30,49 @@ left, right = st.columns([1.1, 1], gap="large")
 
 with left:
     st.markdown("""
-<div style="padding:4.5rem 2rem 4rem 4rem;">
-  <div class="section-tag">🐝 From the Founder</div>
-  <h2 class="section-title">A little kitchen.<br>A <em>big</em> dream.</h2>
+<div style="padding:5rem 2rem 5rem 4rem;">
+  <div class="section-tag">🐝 The Origin</div>
+  <h2 class="section-title">Born from a passion<br>for <em>better</em> skincare.</h2>
   <div class="honey-rule"></div>
-  <p style="font-size:0.96rem;color:#6B4226;line-height:1.82;margin-bottom:1.4rem;">
-    Thee Bee Boutique started the way all good things do — out of necessity
-    and love. After struggling with dry, sensitive skin for years and
-    finding nothing that actually worked, I decided to make my own.
+  <p style="font-size:0.96rem;color:#6B3030;line-height:1.85;margin-bottom:1.5rem;">
+    Thee Bee Boutique was created with one mission: make skincare products
+    that are truly clean. No parabens. No aluminum. No phthalates.
+    Just pure, handmade soap with ingredients you can actually pronounce.
   </p>
-  <p style="font-size:0.96rem;color:#6B4226;line-height:1.82;margin-bottom:1.4rem;">
-    Armed with a kitchen scale, a YouTube playlist, and a local beekeeper
-    who sold me my first jar of raw wildflower honey, I poured my first
-    batch of soap in 2019. My friends and family were hooked immediately —
-    and the rest is history.
+  <p style="font-size:0.96rem;color:#6B3030;line-height:1.85;margin-bottom:1.5rem;">
+    Our story centers on a deep dedication to sustainability and a belief that
+    everyone deserves access to products that are both effective and safe —
+    especially for sensitive skin.
   </p>
-  <p style="font-size:0.96rem;color:#6B4226;line-height:1.82;margin-bottom:2rem;">
-    Today, every bar is still made in small batches in my studio, cured for
-    4–6 weeks, and hand-wrapped with care. Because shortcuts don't belong
-    in skincare — or in anything worth doing right.
+  <p style="font-size:0.96rem;color:#6B3030;line-height:1.85;margin-bottom:2.2rem;">
+    Every bar is handcrafted in small batches because we believe quality can't
+    be rushed. From the first pour to the final wrap, each soap is made with
+    intention — and a whole lot of love.
   </p>
-  <div style="display:flex;align-items:center;gap:1rem;margin-top:1rem;">
-    <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#C9922A,#F0C060);display:flex;align-items:center;justify-content:center;color:white;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;flex-shrink:0;">B</div>
-    <div>
-      <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:#2C1A0E;">Bee, Founder</div>
-      <div style="font-size:0.82rem;color:#8B5E3C;">Soapmaker · Honey lover · Small batch queen</div>
+  <div style="display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:2rem;">
+    <div style="text-align:center;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;color:#C9922A;">13+</div>
+      <div style="font-size:0.8rem;color:#6B3030;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;">Unique Scents</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;color:#C9922A;">100%</div>
+      <div style="font-size:0.8rem;color:#6B3030;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;">Natural Ingredients</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;color:#C9922A;">0</div>
+      <div style="font-size:0.8rem;color:#6B3030;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;">Harmful Chemicals</div>
     </div>
   </div>
+  <a href="/Shop" target="_self" class="btn-honey" style="text-decoration:none;">Shop the Collection  →</a>
 </div>
 """, unsafe_allow_html=True)
 
 with right:
     st.markdown("""
-<div style="padding:4.5rem 4rem 4rem 2rem;">
+<div style="padding:5rem 4rem 5rem 2rem;">
   <div class="story-img">
-    <img src="https://images.unsplash.com/photo-1559715745-e1b33a271d2b?auto=format&fit=crop&w=700&q=80"
-         alt="Soap making studio" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1576426863848-c21f53c60b19?auto=format&fit=crop&w=700&q=80"
+         alt="Handmade soap making" loading="lazy">
   </div>
 </div>
 """, unsafe_allow_html=True)
@@ -74,42 +81,41 @@ st.markdown("</div>", unsafe_allow_html=True)
 
 # ── VALUES ───────────────────────────────────────────────────────
 st.markdown("""
-<div style="background:linear-gradient(135deg,#F5E8CC,#FFF8EE);padding:5.5rem 4rem;">
+<div style="background:linear-gradient(135deg,#F5E0D0,#FAF5EE);padding:5.5rem 4rem;">
   <div style="max-width:1200px;margin:0 auto;">
-    <div class="section-center">
-      <div class="section-tag">💛 What We Stand For</div>
-      <h2 class="section-title">Our <em>values</em> are non-negotiable</h2>
+    <div class="section-center" style="margin-bottom:3.5rem;">
+      <div class="section-tag">💛 What Drives Us</div>
+      <h2 class="section-title">Our values are <em>non-negotiable</em></h2>
       <div class="honey-rule"></div>
     </div>
-  </div>
 </div>
 """, unsafe_allow_html=True)
 
 with st.container():
-    st.markdown('<div style="background:linear-gradient(135deg,#F5E8CC,#FFF8EE);padding:0 4rem 5.5rem;">', unsafe_allow_html=True)
+    st.markdown('<div style="background:linear-gradient(135deg,#F5E0D0,#FAF5EE);padding:0 4rem 5.5rem;">', unsafe_allow_html=True)
     st.markdown('<div style="max-width:1200px;margin:0 auto;">', unsafe_allow_html=True)
 
     v_cols = st.columns(4)
     values = [
         {
-            "icon": "🌿",
-            "title": "Always Natural",
-            "text": "Every ingredient earns its place. No sulfates, no parabens, no synthetic fragrances — ever. What you see on the label is exactly what's in the bar.",
+            "icon": "🚫",
+            "title": "Truly Clean",
+            "text": "Zero parabens. Zero aluminum. Zero phthalates. No compromises on what goes into our bars — ever. What's on the label is all that's in the soap.",
         },
         {
-            "icon": "🐝",
-            "title": "Bee-Friendly",
-            "text": "We partner with local beekeepers who practice ethical, sustainable beekeeping. Healthy bees mean healthier honey — and a healthier planet.",
+            "icon": "🌿",
+            "title": "Organic Ingredients",
+            "text": "We source organic oils, butters, and botanicals because your skin absorbs what you put on it. Every ingredient earns its place in our formula.",
         },
         {
             "icon": "♻️",
-            "title": "Low Waste",
-            "text": "Our packaging is plastic-free and compostable. We source local where possible to reduce our footprint. Good for your skin and the earth.",
+            "title": "Sustainability First",
+            "text": "From how we source ingredients to how we package our products, we make choices that are good for your skin and for the planet.",
         },
         {
-            "icon": "✊🏽",
-            "title": "Woman Owned",
-            "text": "Thee Bee Boutique is proudly Black woman-owned and operated. Every purchase directly supports an independent maker and her community.",
+            "icon": "💛",
+            "title": "Black Woman Owned",
+            "text": "Thee Bee Boutique is proudly Black woman-owned and operated. Every purchase supports an independent maker and a community-driven business.",
         },
     ]
     for i, v in enumerate(values):
@@ -131,35 +137,35 @@ p_left, p_right = st.columns([1, 1], gap="large")
 with p_left:
     st.markdown("""
 <div style="padding:5rem 2rem 5rem 4rem;">
-  <div class="section-tag">⚗️ How It's Made</div>
-  <h2 class="section-title">The cold-process<br><em>craft</em></h2>
+  <div class="section-tag">⚗️ Small Batch Craft</div>
+  <h2 class="section-title">How your soap<br>comes to <em>life</em></h2>
   <div class="honey-rule"></div>
   <div class="process-step">
     <div class="step-num">1</div>
     <div class="step-body">
-      <h4>Source & Measure</h4>
-      <p>We weigh every ingredient by the gram — premium oils, butters, and fresh raw honey sourced within 50 miles of our studio.</p>
+      <h4>Source Organic Ingredients</h4>
+      <p>We carefully select organic oils, butters, and botanical extracts from trusted suppliers. Every ingredient is chosen for what it does for your skin, not for cost.</p>
     </div>
   </div>
   <div class="process-step">
     <div class="step-num">2</div>
     <div class="step-body">
-      <h4>Blend & Saponify</h4>
-      <p>Oils and lye are carefully combined at precise temperatures. The chemical reaction (saponification) creates soap — and zero lye remains in the finished bar.</p>
+      <h4>Handcraft in Small Batches</h4>
+      <p>Using cold-process and hot-process methods, each bar is hand-mixed, hand-poured, and hand-cut. Small batches mean consistent quality and maximum freshness.</p>
     </div>
   </div>
   <div class="process-step">
     <div class="step-num">3</div>
     <div class="step-body">
-      <h4>Pour & Set</h4>
-      <p>We pour the batter into molds, add botanicals on top, and let the bars set for 24–48 hours before unmolding and cutting by hand.</p>
+      <h4>Cure & Inspect</h4>
+      <p>Bars are cured to develop a harder, longer-lasting lather. Every single bar is inspected before it leaves our hands — because your skin deserves perfection.</p>
     </div>
   </div>
   <div class="process-step" style="margin-bottom:0;">
     <div class="step-num">4</div>
     <div class="step-body">
-      <h4>Cure for 4–6 Weeks</h4>
-      <p>Each bar air-cures on wooden racks. This evaporates excess water, hardens the bar, and develops a richer, longer-lasting lather.</p>
+      <h4>Shipped to You with Love</h4>
+      <p>Packaged sustainably and shipped within 2–3 business days. Because we know once you order, you're excited — and we are too.</p>
     </div>
   </div>
 </div>
@@ -169,62 +175,62 @@ with p_right:
     st.markdown("""
 <div style="padding:5rem 4rem 5rem 2rem;">
   <div class="story-img">
-    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=80"
-         alt="Soap curing process" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1559715745-e1b33a271d2b?auto=format&fit=crop&w=700&q=80"
+         alt="Soap ingredients" loading="lazy">
   </div>
 </div>
 """, unsafe_allow_html=True)
 
 # ── INGREDIENTS SPOTLIGHT ─────────────────────────────────────────
 st.markdown("""
-<div style="background:#2C1A0E;padding:5.5rem 4rem;">
+<div style="background:#1A0808;padding:5.5rem 4rem;">
   <div style="max-width:1200px;margin:0 auto;">
     <div class="section-center" style="margin-bottom:3.5rem;">
-      <div class="section-tag" style="color:rgba(240,192,96,0.75);">🍯 The Good Stuff</div>
-      <h2 class="section-title" style="color:#FFF8EE;">Hero <em>ingredients</em> we love</h2>
+      <div class="section-tag" style="color:rgba(240,192,96,0.7);">🌿 What's Inside</div>
+      <h2 class="section-title" style="color:#FFF8EE;">Ingredients we <em>love</em></h2>
       <div class="honey-rule" style="margin:0.8rem auto 0;"></div>
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;">
-      <div style="background:rgba(201,146,42,0.1);border:1px solid rgba(201,146,42,0.2);border-radius:18px;padding:2rem;">
-        <div style="font-size:2.5rem;margin-bottom:0.8rem;">🍯</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:#F0C060;margin-bottom:0.6rem;">Raw Wildflower Honey</div>
-        <p style="font-size:0.86rem;color:rgba(255,248,238,0.65);line-height:1.7;margin:0;">
-          A natural humectant that draws moisture into skin. Rich in amino acids, antioxidants, and antibacterial properties. Our skin's best friend.
+      <div style="background:rgba(201,146,42,0.08);border:1px solid rgba(201,146,42,0.18);border-radius:18px;padding:2rem;">
+        <div style="font-size:2.4rem;margin-bottom:0.8rem;">🫒</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:#F0C060;margin-bottom:0.6rem;">Organic Oils</div>
+        <p style="font-size:0.85rem;color:rgba(255,248,238,0.6);line-height:1.72;margin:0;">
+          Coconut, olive, castor, and safflower oils form the foundation of every bar. Rich, nourishing, and effective without clogging your pores.
         </p>
       </div>
-      <div style="background:rgba(201,146,42,0.1);border:1px solid rgba(201,146,42,0.2);border-radius:18px;padding:2rem;">
-        <div style="font-size:2.5rem;margin-bottom:0.8rem;">🌿</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:#F0C060;margin-bottom:0.6rem;">Shea Butter</div>
-        <p style="font-size:0.86rem;color:rgba(255,248,238,0.65);line-height:1.7;margin:0;">
-          A deep moisturizer packed with vitamins A, E, and F. It helps repair the skin barrier and reduces dryness without clogging pores.
+      <div style="background:rgba(201,146,42,0.08);border:1px solid rgba(201,146,42,0.18);border-radius:18px;padding:2rem;">
+        <div style="font-size:2.4rem;margin-bottom:0.8rem;">🧈</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:#F0C060;margin-bottom:0.6rem;">Shea & Cocoa Butter</div>
+        <p style="font-size:0.85rem;color:rgba(255,248,238,0.6);line-height:1.72;margin:0;">
+          Deep moisturizing butters that soften, soothe, and protect the skin barrier. Your skin drinks these in — no greasiness, just glow.
         </p>
       </div>
-      <div style="background:rgba(201,146,42,0.1);border:1px solid rgba(201,146,42,0.2);border-radius:18px;padding:2rem;">
-        <div style="font-size:2.5rem;margin-bottom:0.8rem;">✨</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:#F0C060;margin-bottom:0.6rem;">Beeswax</div>
-        <p style="font-size:0.86rem;color:rgba(255,248,238,0.65);line-height:1.7;margin:0;">
-          Forms a protective, breathable barrier on skin. Locks in moisture, soothes irritation, and gives our bars their signature creamy hardness.
+      <div style="background:rgba(201,146,42,0.08);border:1px solid rgba(201,146,42,0.18);border-radius:18px;padding:2rem;">
+        <div style="font-size:2.4rem;margin-bottom:0.8rem;">🌿</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:#F0C060;margin-bottom:0.6rem;">Botanical Extracts</div>
+        <p style="font-size:0.85rem;color:rgba(255,248,238,0.6);line-height:1.72;margin:0;">
+          Real lavender buds, turmeric, coffee grounds, and more. Every botanical is chosen for a purpose — never just for looks.
         </p>
       </div>
-      <div style="background:rgba(201,146,42,0.1);border:1px solid rgba(201,146,42,0.2);border-radius:18px;padding:2rem;">
-        <div style="font-size:2.5rem;margin-bottom:0.8rem;">🫒</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:#F0C060;margin-bottom:0.6rem;">Olive Oil</div>
-        <p style="font-size:0.86rem;color:rgba(255,248,238,0.65);line-height:1.7;margin:0;">
-          The backbone of our formula. Deeply nourishing, gentle on all skin types, and packed with squalene that mimics your skin's natural oils.
+      <div style="background:rgba(139,26,44,0.1);border:1px solid rgba(139,26,44,0.2);border-radius:18px;padding:2rem;">
+        <div style="font-size:2.4rem;margin-bottom:0.8rem;">🍯</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:#F0C060;margin-bottom:0.6rem;">Raw Honey</div>
+        <p style="font-size:0.85rem;color:rgba(255,248,238,0.6);line-height:1.72;margin:0;">
+          A natural humectant rich in enzymes and antioxidants. Draws moisture into skin and keeps it there, naturally.
         </p>
       </div>
-      <div style="background:rgba(201,146,42,0.1);border:1px solid rgba(201,146,42,0.2);border-radius:18px;padding:2rem;">
-        <div style="font-size:2.5rem;margin-bottom:0.8rem;">🥥</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:#F0C060;margin-bottom:0.6rem;">Coconut Oil</div>
-        <p style="font-size:0.86rem;color:rgba(255,248,238,0.65);line-height:1.7;margin:0;">
-          Creates that luxurious, bubbly lather we all love. Antimicrobial and conditioning, it cleanses deeply while leaving skin soft.
+      <div style="background:rgba(139,26,44,0.1);border:1px solid rgba(139,26,44,0.2);border-radius:18px;padding:2rem;">
+        <div style="font-size:2.4rem;margin-bottom:0.8rem;">✨</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:#F0C060;margin-bottom:0.6rem;">Vitamin E</div>
+        <p style="font-size:0.85rem;color:rgba(255,248,238,0.6);line-height:1.72;margin:0;">
+          A powerful antioxidant that protects skin from free radicals and helps maintain its youthful moisture balance.
         </p>
       </div>
-      <div style="background:rgba(201,146,42,0.1);border:1px solid rgba(201,146,42,0.2);border-radius:18px;padding:2rem;">
-        <div style="font-size:2.5rem;margin-bottom:0.8rem;">🌸</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:#F0C060;margin-bottom:0.6rem;">Botanicals & Essentials</div>
-        <p style="font-size:0.86rem;color:rgba(255,248,238,0.65);line-height:1.7;margin:0;">
-          Real lavender buds, rose petals, oatmeal, and activated charcoal — each chosen for a specific skin benefit, never just for looks.
+      <div style="background:rgba(139,26,44,0.1);border:1px solid rgba(139,26,44,0.2);border-radius:18px;padding:2rem;">
+        <div style="font-size:2.4rem;margin-bottom:0.8rem;">🚫</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:#F0C060;margin-bottom:0.6rem;">What We Leave Out</div>
+        <p style="font-size:0.85rem;color:rgba(255,248,238,0.6);line-height:1.72;margin:0;">
+          No parabens. No aluminum. No phthalates. No SLS. No synthetic dyes. No artificial preservatives. That's our clean promise.
         </p>
       </div>
     </div>
@@ -234,12 +240,13 @@ st.markdown("""
 
 # ── CTA ──────────────────────────────────────────────────────────
 st.markdown("""
-<div style="text-align:center;padding:5rem 4rem;">
-  <div class="section-tag">🛒 Ready to Glow?</div>
-  <h2 class="section-title">Find your perfect <em>bar</em></h2>
+<div style="text-align:center;padding:5.5rem 4rem;background:#FAF5EE;">
+  <div class="section-tag">🛒 Ready?</div>
+  <h2 class="section-title">Find your <em>perfect</em> bar</h2>
   <div class="honey-rule" style="margin:0.8rem auto 1.5rem;"></div>
-  <p style="font-size:0.96rem;color:#6B4226;max-width:480px;margin:0 auto 2.5rem;line-height:1.75;">
-    Browse the full Hive Collection and discover the soap that your skin has been waiting for.
+  <p style="font-size:0.95rem;color:#6B3030;max-width:450px;margin:0 auto 2.5rem;line-height:1.78;">
+    Browse 13+ handmade scents — from Black Cherry Merlot to Bee Loved —
+    all free of the chemicals your skin doesn't need.
   </p>
   <a href="/Shop" target="_self" class="btn-honey" style="text-decoration:none;">Shop All Soaps  →</a>
 </div>

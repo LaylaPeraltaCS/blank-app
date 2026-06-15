@@ -8,7 +8,7 @@ from utils import (
 )
 
 st.set_page_config(
-    page_title="Thee Bee Boutique | Handmade Soaps",
+    page_title="Thee Bee Boutique | Pure Handmade Natural Soaps",
     page_icon="🐝",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -22,14 +22,21 @@ render_nav()
 st.markdown("""
 <section class="bee-hero">
   <div class="hero-inner">
-    <div class="hero-badge">🐝 &nbsp;Small Batch · All Natural · Handcrafted</div>
-    <h1 class="hero-headline">Skin that <em>glows,</em><br>naturally.</h1>
+    <div class="hero-badge">🐝 &nbsp;Pure · Handmade · Natural</div>
+    <h1 class="hero-headline">Your skin deserves<br>the <em>real thing.</em></h1>
     <p class="hero-sub">
-      Thee Bee Boutique crafts luxurious handmade soaps using raw honey,
-      beeswax, and botanical ingredients your skin will truly love.
+      Thee Bee Boutique crafts handmade natural soaps free of parabens,
+      aluminum, and phthalates — because your skin deserves better than chemicals.
     </p>
+    <div class="hero-pills">
+      <span class="hero-pill">✅ Paraben-Free</span>
+      <span class="hero-pill">✅ Aluminum-Free</span>
+      <span class="hero-pill">✅ Phthalate-Free</span>
+      <span class="hero-pill">✅ Sensitive Skin Friendly</span>
+      <span class="hero-pill">✅ Organic Ingredients</span>
+    </div>
     <div class="hero-cta-row">
-      <a href="/Shop" target="_self" class="btn-honey">Shop the Hive &nbsp;→</a>
+      <a href="/Shop" target="_self" class="btn-honey">Shop Now &nbsp;→</a>
       <a href="/About" target="_self" class="btn-ghost">Our Story</a>
     </div>
   </div>
@@ -38,12 +45,14 @@ st.markdown("""
 
 # ── SCENT MARQUEE ────────────────────────────────────────────────
 items = [
-    "🍯 Raw Honey", "🌸 French Lavender", "🍊 Citrus Blends",
-    "🌿 Botanicals", "🥥 Coconut Milk", "🌹 Rose Absolute",
-    "✨ Beeswax", "🫐 Oatmeal & Shea", "🌿 Tea Tree", "🍦 Vanilla Bean",
+    "🍷 Black Cherry Merlot", "🐝 Bee Loved", "💌 Love Letter",
+    "👑 Be Still Queen", "🍊 Orange Turmeric", "☕ Brewski",
+    "🍎 Apple & Spice", "🥃 Vanilla Bourbon", "🍹 Sangria Bar",
+    "🎃 Pumpkin Spice", "❄️ Vanilla Snowflake", "💜 Lavender Unwind",
+    "🍯 Honey Almond",
 ]
 track = "".join(
-    f'<span class="scent-item">{x}</span><span class="scent-dot"> · </span>'
+    f'<span class="scent-item">{x}</span><span class="scent-dot">&nbsp;·&nbsp;</span>'
     for x in items
 ) * 2
 st.markdown(
@@ -54,23 +63,27 @@ st.markdown(
 # ── FEATURED PRODUCTS ────────────────────────────────────────────
 st.markdown("""
 <div class="section section-center">
-  <div class="section-tag">🍯 The Honey Collection</div>
-  <h2 class="section-title">Our <em>Bestselling</em> Bars</h2>
+  <div class="section-tag">🍯 The Collection</div>
+  <h2 class="section-title">Customer <em>Favorites</em></h2>
   <div class="honey-rule"></div>
   <p class="section-sub">
-    Each bar is made in small batches and cold-process cured for 4–6 weeks
-    for the richest lather and gentlest cleanse.
+    Every bar is handmade in small batches with organic ingredients —
+    no fillers, no shortcuts, just real soap for real skin.
   </p>
 </div>
 """, unsafe_allow_html=True)
 
 st.markdown('<div style="max-width:1200px;margin:0 auto;padding:0 3rem 1rem;">', unsafe_allow_html=True)
-featured = PRODUCTS[:3]
-cols = st.columns(3)
+
+# Show 4 featured products: Black Cherry Merlot, Bee Loved, Be Still Queen, Orange Turmeric
+featured_ids = [1, 2, 4, 6]
+featured = [p for p in PRODUCTS if p["id"] in featured_ids]
+
+cols = st.columns(4)
 for i, product in enumerate(featured):
     with cols[i]:
         render_product_card(product)
-        if st.button(f"🛒  Add to Cart", key=f"home_{product['id']}"):
+        if st.button(f"🛒 Add to Cart", key=f"home_{product['id']}"):
             add_to_cart(product["id"])
             st.toast(f"'{product['name']}' added to cart!", icon="🐝")
 
@@ -78,44 +91,67 @@ st.markdown("</div>", unsafe_allow_html=True)
 
 _, mid, _ = st.columns([3, 1, 3])
 with mid:
-    st.markdown('<div style="text-align:center;padding:0.5rem 0 3rem;">', unsafe_allow_html=True)
+    st.markdown('<div style="text-align:center;padding:1rem 0 3.5rem;">', unsafe_allow_html=True)
     if st.button("View All Soaps  →", key="view_all_home"):
         st.switch_page("pages/Shop.py")
     st.markdown("</div>", unsafe_allow_html=True)
 
-# ── BRAND STORY SPLIT ────────────────────────────────────────────
+# ── BRAND PROMISE STRIP ──────────────────────────────────────────
 st.markdown("""
-<div style="max-width:1200px;margin:0 auto;padding:0 3rem;">
-  <hr style="border:none;border-top:1px solid #E8D5B0;margin:0 0 4rem;">
+<div style="background:#FAF5EE;border-top:1px solid #E8D0C0;border-bottom:1px solid #E8D0C0;padding:2.5rem 4rem;">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center;">
+    <div>
+      <div style="font-size:2rem;margin-bottom:0.5rem;">🚫</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:#1A0808;margin-bottom:0.3rem;">No Parabens</div>
+      <div style="font-size:0.8rem;color:#6B3030;">Ever. Not even a little.</div>
+    </div>
+    <div>
+      <div style="font-size:2rem;margin-bottom:0.5rem;">🚫</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:#1A0808;margin-bottom:0.3rem;">No Aluminum</div>
+      <div style="font-size:0.8rem;color:#6B3030;">Clean formula, always.</div>
+    </div>
+    <div>
+      <div style="font-size:2rem;margin-bottom:0.5rem;">🚫</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:#1A0808;margin-bottom:0.3rem;">No Phthalates</div>
+      <div style="font-size:0.8rem;color:#6B3030;">Because you deserve better.</div>
+    </div>
+    <div>
+      <div style="font-size:2rem;margin-bottom:0.5rem;">✅</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:#1A0808;margin-bottom:0.3rem;">Sensitive Skin Safe</div>
+      <div style="font-size:0.8rem;color:#6B3030;">Gentle for every skin type.</div>
+    </div>
+  </div>
 </div>
 """, unsafe_allow_html=True)
 
+# ── BRAND STORY SPLIT ────────────────────────────────────────────
 story_l, story_r = st.columns([1, 1], gap="large")
 with story_l:
     st.markdown("""
-<div style="padding:2rem 2rem 2rem 3rem;">
-  <div class="section-tag">🌿 The Story</div>
+<div style="padding:5rem 2rem 5rem 4rem;">
+  <div class="section-tag">🌿 Pure by Design</div>
   <h2 class="section-title">Made with <em>intention,</em><br>not shortcuts.</h2>
   <div class="honey-rule"></div>
-  <p style="font-size:0.96rem;color:#6B4226;line-height:1.78;margin-bottom:1.5rem;">
-    Thee Bee Boutique began in a small kitchen with one goal: create a soap
-    that was truly good for the skin — no sulfates, no synthetic fragrances,
-    no compromises. Just raw honey, beeswax, and botanicals that actually work.
+  <p style="font-size:0.96rem;color:#6B3030;line-height:1.82;margin-bottom:1.5rem;">
+    Thee Bee Boutique was born from a passion for sustainability and a deep
+    belief that your skincare routine shouldn't come with a list of chemicals
+    you can't pronounce.
   </p>
-  <p style="font-size:0.96rem;color:#6B4226;line-height:1.78;margin-bottom:2rem;">
-    Every bar is hand-poured in small batches, cured for weeks, and wrapped
-    with love. Because your skin deserves the real thing.
+  <p style="font-size:0.96rem;color:#6B3030;line-height:1.82;margin-bottom:2rem;">
+    Every bar is handcrafted with organic ingredients, made in small batches
+    so nothing sits on a shelf too long. Real soap. Real results.
+    Real love for your skin.
   </p>
-  <a href="/About" target="_self" class="btn-honey" style="text-decoration:none;">Meet the Maker  →</a>
+  <a href="/About" target="_self" class="btn-honey" style="text-decoration:none;">Read Our Story  →</a>
 </div>
 """, unsafe_allow_html=True)
 
 with story_r:
     st.markdown("""
-<div style="padding:2rem 3rem 2rem 2rem;">
+<div style="padding:5rem 4rem 5rem 2rem;">
   <div class="story-img">
-    <img src="https://images.unsplash.com/photo-1576426863848-c21f53c60b19?auto=format&fit=crop&w=700&q=80"
-         alt="Artisan soap making" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=80"
+         alt="Handmade soap making" loading="lazy">
   </div>
 </div>
 """, unsafe_allow_html=True)
@@ -123,32 +159,32 @@ with story_r:
 # ── WHY CHOOSE US ────────────────────────────────────────────────
 st.markdown("""
 <div class="why-band">
-  <div style="max-width:1200px;margin:0 auto;">
+  <div style="max-width:1100px;margin:0 auto;">
     <div class="section-center" style="margin-bottom:3.5rem;">
-      <div class="section-tag">✨ Why We're Different</div>
-      <h2 class="section-title">Crafted with <em>care</em> in every bar</h2>
+      <div class="section-tag">✨ The Difference</div>
+      <h2 class="section-title">Why the hive <em>loves</em> us</h2>
       <div class="honey-rule"></div>
     </div>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;">
       <div class="why-card">
-        <span class="why-icon">🍯</span>
-        <div class="why-title">Raw Honey Infused</div>
-        <p class="why-text">We source raw wildflower honey directly from local beekeepers — packed with enzymes and antioxidants your skin craves.</p>
-      </div>
-      <div class="why-card">
-        <span class="why-icon">🌿</span>
-        <div class="why-title">100% Natural</div>
-        <p class="why-text">No SLS, no parabens, no synthetic dyes. Just skin-loving oils, butters, and plant botanicals — full stop.</p>
+        <span class="why-icon">🧴</span>
+        <div class="why-title">Pure Ingredients</div>
+        <p class="why-text">Organic oils, butters, and botanical extracts. Nothing artificial, nothing harmful. What's on the label is everything that's in the bar.</p>
       </div>
       <div class="why-card">
         <span class="why-icon">✋</span>
-        <div class="why-title">Small Batch Handmade</div>
-        <p class="why-text">We make 5–12 bars at a time using traditional cold-process methods. Quality you can see, smell, and feel.</p>
+        <div class="why-title">Truly Handmade</div>
+        <p class="why-text">Every bar is hand-poured and hand-cut in small batches. No mass production. Your soap was made by real hands with real care.</p>
       </div>
       <div class="why-card">
-        <span class="why-icon">🐝</span>
-        <div class="why-title">Cruelty Free</div>
-        <p class="why-text">Every formula is vegan-friendly and never tested on animals. Good for you, good for the planet, good for the bees.</p>
+        <span class="why-icon">🌱</span>
+        <div class="why-title">Sustainability First</div>
+        <p class="why-text">From ingredient sourcing to packaging, we make choices that are good for your skin and for the planet. Because both matter.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">💛</span>
+        <div class="why-title">Black Woman Owned</div>
+        <p class="why-text">Thee Bee Boutique is proudly Black woman-owned and operated. Every purchase directly supports an independent maker and her community.</p>
       </div>
     </div>
   </div>
@@ -159,32 +195,34 @@ st.markdown("""
 st.markdown("""
 <div class="testimonial-band">
   <div class="section section-center">
-    <div class="section-tag">💛 Happy Hive</div>
-    <h2 class="section-title">What our <em>customers</em> are saying</h2>
+    <div class="section-tag">💛 The Hive Speaks</div>
+    <h2 class="section-title">Real results, real <em>people</em></h2>
     <div class="honey-rule"></div>
   </div>
 </div>
 """, unsafe_allow_html=True)
 
-t_cols = st.columns(3)
 testimonials = [
     {
-        "text": "I've tried so many natural soaps and nothing compares. The Golden Honey Oat Bar cleared up my dry patches in two weeks. My skin feels unbelievably soft.",
-        "name": "Jasmine T.",
-        "loc": "Atlanta, GA",
-        "init": "J",
-    },
-    {
-        "text": "The Lavender Beeswax Dream smells divine and my skin looks incredible. I've been sleeping so much better since I started using it at night. Absolute magic.",
-        "name": "Renée M.",
-        "loc": "New Orleans, LA",
-        "init": "R",
-    },
-    {
-        "text": "I ordered a gift set for my mom and she cried — in a good way! The packaging is gorgeous and the soaps last forever. We're both hooked. Won't buy from anywhere else.",
-        "name": "Destiny K.",
+        "text": "The Black Cherry Merlot is everything. My husband keeps stealing it out of the shower. I've had to start ordering two at a time just to keep one for myself!",
+        "name": "Keisha W.",
         "loc": "Houston, TX",
-        "init": "D",
+        "init": "K",
+        "product": "Black Cherry Merlot",
+    },
+    {
+        "text": "I have super sensitive skin and have been dealing with reactions to store soaps for years. Bee Loved is the ONLY soap I can use without breaking out. I'm never going back.",
+        "name": "Tamara J.",
+        "loc": "Atlanta, GA",
+        "init": "T",
+        "product": "Bee Loved",
+    },
+    {
+        "text": "Be Still Queen is my self-care ritual now. Something about the scent just makes me feel grounded. Ordered 6 bars and gave 3 away as gifts. Everyone asked where I got them.",
+        "name": "Monique R.",
+        "loc": "Chicago, IL",
+        "init": "M",
+        "product": "Be Still Queen",
     },
 ]
 
@@ -201,7 +239,7 @@ with st.container():
     <div class="t-avatar">{t['init']}</div>
     <div>
       <div class="t-name">{t['name']}</div>
-      <div class="t-loc">{t['loc']}</div>
+      <div class="t-loc">{t['loc']} · <em>{t['product']}</em></div>
     </div>
   </div>
 </div>
@@ -211,25 +249,25 @@ with st.container():
 # ── NEWSLETTER ───────────────────────────────────────────────────
 st.markdown("""
 <div class="newsletter-band">
-  <div style="max-width:600px;margin:0 auto;">
-    <div class="section-tag" style="color:rgba(255,255,255,0.7);">🐝 Stay in the Hive</div>
-    <h2 class="section-title">Get <em>first access</em> to new drops</h2>
+  <div style="max-width:580px;margin:0 auto;">
+    <div class="section-tag" style="color:rgba(255,255,255,0.65);">🐝 Stay in the Hive</div>
+    <h2 class="section-title">New scents drop <em>first</em> here</h2>
     <div class="honey-rule"></div>
-    <p class="section-sub">Join our community for exclusive scents, restocks, and 10% off your first order.</p>
+    <p class="section-sub">Join the hive for exclusive drops, restocks, and 10% off your first order.</p>
   </div>
 </div>
 """, unsafe_allow_html=True)
 
 with st.container():
-    st.markdown('<div style="background:#C9922A;padding:0 4rem 4rem;">', unsafe_allow_html=True)
+    st.markdown('<div style="background:linear-gradient(135deg,#8B1A2C,#C9922A);padding:0 4rem 4.5rem;">', unsafe_allow_html=True)
     _, center, _ = st.columns([1, 2, 1])
     with center:
         with st.form("newsletter_form", clear_on_submit=True):
             email = st.text_input("", placeholder="Enter your email address…")
-            submitted = st.form_submit_button("🐝  Subscribe — It's Free")
-            if submitted and email:
-                st.success("You're in the hive! Check your inbox for your 10% off code. 🍯")
-            elif submitted:
+            sub = st.form_submit_button("🐝  Join the Hive — It's Free")
+            if sub and email:
+                st.success("You're in! Check your inbox for your 10% off code. 🍯")
+            elif sub:
                 st.warning("Please enter your email address.")
     st.markdown("</div>", unsafe_allow_html=True)
 
